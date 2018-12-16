@@ -74,11 +74,15 @@ void manejadorDeMensajes(int numeroDeMensajes) {
 
     if (comando == "/UltimaDispensacion") {
         String mensaje = "";
-        if(banderaAlimento == 1){
+        if(banderaAlimento == 1 && banderaAgua == 1){
             mensaje += "Se dispensó alimento por última vez el " + fechaAlimento + " a las " + horaAlimento;
-        }
-        else if(banderaAgua == 1){
             mensaje += "\n\n Se dispensó agua por última vez el " + fechaAgua + " a las " + horaAgua;
+        }
+        else if(banderaAgua == 1 && banderaAlimento == 0){
+            mensaje += "\n\n Se dispensó agua por última vez el " + fechaAgua + " a las " + horaAgua;
+        }
+        else if (banderaAlimento == 1 && banderaAgua == 0) {
+            mensaje += "Se dispensó alimento por última vez el " + fechaAlimento + " a las " + horaAlimento;
         }
         else{
             mensaje = "Aún no se han dispensado alimento ni agua";
