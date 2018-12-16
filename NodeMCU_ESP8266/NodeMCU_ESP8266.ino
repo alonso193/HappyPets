@@ -68,7 +68,7 @@ void manejadorDeMensajes(int numeroDeMensajes) {
         struct tm* date = localtime(&now);
         fechaAlimento = String(date->tm_mday) + "/" + String(date->tm_mon + 1) + "/" + String(date-> tm_year + 1900);
         horaAlimento = String(date->tm_hour) + ":" + String(date->tm_min) + ":" + String(date->tm_sec);
-        digitalWriteString(bit1, LOW);
+        digitalWrite(bit1, LOW);
         bot.sendMessage(chat_id, "En este momento estamos dispensando una porción de alimento a su mascota");
     }
 
