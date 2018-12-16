@@ -68,7 +68,7 @@ void manejadorDeMensajes(int numeroDeMensajes) {
         struct tm* date = localtime(&now);
         fechaAlimento = String(date->tm_mday) + "/" + String(date->tm_mon + 1) + "/" + String(date-> tm_year + 1900);
         horaAlimento = String(date->tm_hour) + ":" + String(date->tm_min) + ":" + String(date->tm_sec);
-        digitalWrite(bit1, LOW);
+        digitalWriteString(bit1, LOW);
         bot.sendMessage(chat_id, "En este momento estamos dispensando una porción de alimento a su mascota");
     }
 
@@ -81,7 +81,7 @@ void manejadorDeMensajes(int numeroDeMensajes) {
             mensaje += "\n\n Se dispensó agua por última vez el " + fechaAgua + " a las " + horaAgua;
         }
         else{
-            mensaje = "Aún no se han dispensado alimento ni agua"
+            mensaje = "Aún no se han dispensado alimento ni agua";
         }
 
         bot.sendMessage(chat_id, mensaje);
