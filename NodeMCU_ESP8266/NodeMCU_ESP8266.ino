@@ -80,11 +80,11 @@ void manejadorDeMensajes(int numeroDeMensajes) {
         }
         else if(banderaAgua == 1 && banderaAlimento == 0){
             mensaje += "\n\n Se dispensó agua por última vez el " + fechaAgua + " a las " + horaAgua;
-            mensaje += "\n y aún no se ha dispensado alimento."
+            mensaje += "\n y aún no se ha dispensado alimento.";
         }
         else if (banderaAlimento == 1 && banderaAgua == 0) {
             mensaje += "Se dispensó alimento por última vez el " + fechaAlimento + " a las " + horaAlimento;
-            mensaje += "\n y aún no se ha dispensado agua."
+            mensaje += "\n y aún no se ha dispensado agua.";
         }
         else{
             mensaje = "Aún no se han dispensado alimento ni agua";
