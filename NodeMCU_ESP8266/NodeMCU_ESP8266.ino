@@ -59,6 +59,8 @@ void manejadorDeMensajes(int numeroDeMensajes) {
       fechaAgua = String(date->tm_mday) + "/" + String(date->tm_mon + 1) + "/" + String(date-> tm_year + 1900);
       horaAgua = String(date->tm_hour) + ":" + String(date->tm_min) + ":" + String(date->tm_sec);
       digitalWrite(bit0, HIGH);
+      delay(1000);
+      digitalWrite(bit0, LOW);
       bot.sendMessage(chat_id, "En este momento estamos dispensando una porción de agua a su mascota");
     }
 
@@ -68,6 +70,8 @@ void manejadorDeMensajes(int numeroDeMensajes) {
       struct tm* date = localtime(&now);
       fechaAlimento = String(date->tm_mday) + "/" + String(date->tm_mon + 1) + "/" + String(date-> tm_year + 1900);
       horaAlimento = String(date->tm_hour) + ":" + String(date->tm_min) + ":" + String(date->tm_sec);
+      digitalWrite(bit1, HIGH);
+      delay(1000);
       digitalWrite(bit1, LOW);
       bot.sendMessage(chat_id, "En este momento estamos dispensando una porción de alimento a su mascota");
     }
